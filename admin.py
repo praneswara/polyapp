@@ -26,14 +26,6 @@ DEMO_TRANSACTIONS = [
 ]
 
 # ---------------- Routes -----------------
-@app.route("/admin/login", methods=["GET","POST"])
-def admin_login():
-    return jsonify({
-        "total_users": len(DEMO_USERS),
-        "total_machines": len(DEMO_MACHINES),
-        "total_transactions": len(DEMO_TRANSACTIONS)
-    })
-
     
 @admin_app.route("/admin/dashboard", methods=["GET"])
 def admin_dashboard():
