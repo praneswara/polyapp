@@ -85,6 +85,14 @@ def machine_insert():
         machine_available_space=89,
         machine_is_full=False
     )
+    
+@app.route("/api/user/fetch", methods=["POST"])
+def machine_insert():
+    return jsonify(
+        user_id=0,
+        name="BUSANTECH",
+        mobile=1234567890
+    )
 
 
 @app.route("/api/machines", methods=["GET"])
