@@ -121,7 +121,7 @@ def list_machines():
             "current_bottles": 20,
             "max_capacity": 100,
             "available_space": 80,
-            "is_full": False,
+            "is_full": True,
             "last_emptied": None
         }
     ])
