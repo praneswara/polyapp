@@ -19,12 +19,12 @@ DEMO_USER = {
 @app.route("/api/auth/login", methods=["POST"])
 def login():
     data = request.get_json() or {}
-    if data.get("mobile") == 1234567890 or data.get("password") == "password123":
+    if data.get("mobile") == 1234567890 and data.get("password") == "password123":
         return jsonify(
             access_token="dummy-token",
             user=DEMO_USER
         )
-    return jsonify(message="Invalid credentials"), 401
+    return jsonify(message=data.get("mobile"),data.get("password")), 401
 
 
 @app.route("/api/auth/register", methods=["POST"])
