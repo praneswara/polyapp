@@ -87,7 +87,7 @@ def machine_insert():
     )
     
 @app.route("/api/user/fetch", methods=["POST"])
-def machine_insert():
+def fetchuser():
     return jsonify(
         user_id=0,
         name="BUSANTECH",
