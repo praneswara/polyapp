@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import datetime as dt
+import random
 
 admin_app = Flask(__name__)
 
@@ -102,6 +103,12 @@ def admin_add_machine():
 @admin_app.route("/", methods=["GET"])
 def home():
     return jsonify(message="Demo Admin API running (no DB)")
+
+@admin_app.route("/processStatus", methods=["GET"])
+def process_status():
+    statuses = ["select", "reject", "nobottle"]
+    result = random.choice(statuses)
+    return jsonify({"status": result})
 
 
 if __name__ == "__main__":
