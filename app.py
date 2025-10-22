@@ -137,7 +137,7 @@ def home():
 def process_status():
     statuses = ["select", "reject", "nobottle"]
     result = random.choice(statuses)
-    return jsonify({"status": result})
+    return jsonify({"result": result})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
