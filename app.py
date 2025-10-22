@@ -132,6 +132,11 @@ def list_machines():
 def home():
     return jsonify(message="Demo Polygreen API running (no DB)")
 
+@app.route("/processStatus", methods=["GET"])
+def process_status():
+    statuses = ["select", "reject", "nobottle"]
+    result = random.choice(statuses)
+    return jsonify({"status": result})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
