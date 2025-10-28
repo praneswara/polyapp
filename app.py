@@ -135,10 +135,10 @@ def home():
 
 @app.route("/processStatus", methods=["GET"])
 def process_status():
-    statuses = ["select", "reject", "nobottle"]
+    statuses = ["selected", "rejected", "nobottle"]
     # Assign weights: select=70%, reject=20%, nobottle=10%
     weights = [60, 20, 20]
     result = random.choices(statuses, weights=weights, k=1)[0]
-    return jsonify({"selected": {"result": result}})
+    return jsonify({"result": result})
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
